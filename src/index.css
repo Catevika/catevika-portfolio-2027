@@ -43,7 +43,7 @@ li {
 h1,
 h2,
 h3 {
-	@apply font-poppins;
+	@apply font-heading;
 }
 
 h1 {
