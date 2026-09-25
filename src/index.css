@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+	/* Fonts */
+	--font-sans: "Poppins", sans-serif;
+	--font-heading: "Roboto", sans-serif;
+
+	/* Colors */
+	--color-*: initial;
+	--color-white: oklch(99.227% 0.00679 324.853);
+	--color-black: oklch(17.565% 0.05773 254.952);
+	--color-navy: oklch(17.89% 0.09949 266.214);
+	--color-red: oklch(14.824% 0.03438 349.063);
+	--color-pink: oklch(44.903% 0.15296 353.796);
+	--color-light-gold: oklch(85.775% 0.0538 61.433);
+	--color-gold: oklch(55.478% 0.1109 56.711);
+	--color-cyan: oklch(60.749% 0.08652 237.446);
+}
+
+@layer base {
+	:root {
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+#root {
+	@apply relative bg-radial-[circle_at_left_top,navy_-10%,black_100%] text-base text-white font-sans max-w-360 flex justify-center w-dvw overflow-x-hidden min-h-dvh;
+}
+
+a {
+	@apply no-underline text-inherit;
+}
+
+p,
+li {
+	@apply mt-2 text-center md:text-start;
+}
+
+h1,
+h2,
+h3 {
+	@apply font-poppins;
+}
+
+h1 {
+	@apply text-6xl
+				 mb-4
+				 wrap-break-word
+				 font-semibold
+				 leading-[1.1]
+				 text-center
+				 md:text-start;
+
+	@media screen and (max-width: 640px) {
+		@apply text-5xl;
+	}
+}
+
+h2 {
+	@apply mt-3
+				 mb-3
+				 text-2xl
+				 font-light
+				 wrap-break-word
+				 leading-none
+				 text-center
+				 md:text-start;
+}
+
+h3 {
+	@apply mt-3
+				 mb-3
+				 text-lg
+				 tracking-widest
+				 uppercase
+				 leading-none
+				 text-center
+				 md:text-start;
+}
+
+.short-note {
+	@apply text-sm italic capitalize tracking-normal m-0;
+}
