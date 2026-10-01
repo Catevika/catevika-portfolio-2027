@@ -1,8 +1,12 @@
+import About from "./components/About";
+import Hero from "./components/Hero";
+
 function App() {
   return (
-    <section id="hero">
-      <div>App</div>
-    </section>
+    <main>
+      <Hero />
+      <About />
+    </main>
   );
 }
 
