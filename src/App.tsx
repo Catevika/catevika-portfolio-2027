@@ -1,5 +1,9 @@
 function App() {
-  return <div>App</div>;
+  return (
+    <section id="hero">
+      <div>App</div>
+    </section>
+  );
 }
 
 export default App;
