@@ -15,3 +15,18 @@ export type CircleElement = {
   a: number;
   grd: CanvasGradient;
 };
+
+export type Job = {
+  title: string;
+  description: string;
+};
+
+export type Item = {
+  name: string;
+  icon: string;
+};
+
+export type Skill = {
+  title: string;
+  items: Item[];
+};

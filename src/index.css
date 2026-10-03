@@ -71,6 +71,12 @@
 }
 
 @layer base {
+	* {
+		scrollbar-gutter: stable;
+		scrollbar-width: thin; /* options: auto, thin, none */
+		scrollbar-color: var(--color-cyan) var(--color-black); /* thumb color, track color */
+	}
+
 	html {
 		@apply bg-black;
 	}
@@ -116,7 +122,7 @@
   }
 
   h3 {
-    @apply mt-3 mb-3 text-lg tracking-widest uppercase leading-none;
+    @apply mt-3 mb-3 text-lg tracking-widest uppercase leading-5;
   }
 
   .short-note {
@@ -220,14 +226,14 @@
 	}
 
 	#hero {
-		@apply flex flex-col items-center justify-center h-dvh z-0 overflow-hidden;
+		@apply flex flex-col items-center justify-center min-h-dvh z-0 overflow-x-hidden;
 
 		.hero-background {
 			@apply absolute top-0 left-0 -z-1 pointer-events-none max-w-360 w-dvw max-h-dvh;
 		}
 
 		.hero-container {
-			@apply flex flex-col items-center z-2 p-4 sm:p-10 mt-13;
+			@apply flex flex-col items-center z-2 p-4 sm:p-6 mt-13;
 		}
 
 		.hero-sub-container {
@@ -235,11 +241,11 @@
 		}
 
 		.hero-top {
-			@apply flex flex-col justify-center items-center lg:flex-row lg:justify-start lg:items-start gap-4 lg:gap-6;
+			@apply flex flex-col justify-center  items-center sm:items-end gap-6;
 		}
 
 		.hero-img-container {
-			@apply translate-y-[-50%] sm:translate-y-0 sm:ml-auto;
+			@apply translate-y-[-50%] sm:translate-y-0;
 		}
 
 		.hero-img {
@@ -280,6 +286,50 @@
 
 		.btn {
 			@apply z-4 rounded-md px-5 py-2 text-white transition-colors duration-200 hover:bg-navy/50 hover:text-white/80 bg-black w-35 h-10 border border-white/30;
+		}
+	}
+
+	#about {
+		@apply min-h-dvh z-0 overflow-x-hidden;
+
+		.about-container {
+			@apply flex flex-col gap-4 z-2 p-4 mt-14;
+		}
+
+		.about-sub-container {
+			@apply grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-4 max-w-4xl mx-auto;
+		}
+
+		.about-job {
+			@apply min-w-0 px-3 pb-3;
+		}
+
+		.about-title {
+			@apply h-12;
+		}
+
+		.about-description {
+			@apply text-sm border-l border-l-light-gold pl-4;
+		}
+
+		.about-skills-container {
+			@apply flex gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain xl:overflow-x-hidden;
+		}
+
+		.about-skill {
+			@apply m-0 min-w-0 shrink-0 basis-[85%] p-4 sm:basis-[70%] md:basis-[48%] lg:basis-[32%] xl:basis-0 xl:shrink xl:flex-1;
+		}
+
+		.about-skill-title {
+			@apply mt-0;
+		}
+
+		.about-skill-item {
+			@apply text-sm flex items-center gap-2;
+		}
+
+		.about-skill-icon {
+			@apply h-5;
 		}
 	}
 }
