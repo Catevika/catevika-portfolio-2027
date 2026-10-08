@@ -17,7 +17,7 @@ function Header({
     >
       <Logo />
 
-      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Navbar setIsOpen={setIsOpen} />
     </header>
   );
 }
