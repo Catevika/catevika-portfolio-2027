@@ -6,7 +6,12 @@ function About() {
   return (
     <section id="about">
       <div className="about-container">
-        <h2>Professional Journey</h2>
+        <h1 className="text-gradient-gold text-shadow-black/10 text-shadow-lg mb-0">
+          Crafting Digital Experiences
+        </h1>
+        <h2 className="mt-0">
+          Creating engaging and user-friendly web applications
+        </h2>
         <div className="about-sub-container">
           {professionalJourney.map((item: Job) => (
             <article key={item.title} className="about-job">
