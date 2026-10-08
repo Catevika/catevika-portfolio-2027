@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @property --angle {
@@ -16,6 +16,17 @@
 	}
 }
 
+@keyframes ringTheBell {
+	from {
+		--angle: -25deg;
+		transform: rotate(var(--angle));
+	}
+	to {
+		--angle: 25deg;
+		transform: rotate(var(--angle)); 
+	}
+}
+
 @utility text-gradient-* {
 	@apply bg-clip-text text-transparent inline-block;
 	background-image: --value(--gradient-*);
@@ -23,8 +34,8 @@
 
 @theme {
 	/* Fonts */
-	--font-sans: "Poppins", sans-serif;
-	--font-heading: "Roboto", sans-serif;
+	--font-sans: "Raleway", sans-serif;
+	--font-heading: "Cabin", sans-serif;
 
 	/* Colors */
 	--color-*: initial;
@@ -72,13 +83,13 @@
 
 @layer base {
 	* {
-		scrollbar-gutter: stable;
 		scrollbar-width: thin; /* options: auto, thin, none */
 		scrollbar-color: var(--color-cyan) var(--color-black); /* thumb color, track color */
 	}
 
 	html {
 		@apply bg-black;
+		scroll-behavior: smooth;
 	}
 
   :root {
@@ -91,7 +102,7 @@
   }
 
   main {
-    @apply mx-4 mb-2 z-1;
+    @apply mx-2 mb-2 z-1;
   }
 
   a {
@@ -100,7 +111,7 @@
 
   p,
   li {
-    @apply mt-2 text-start;
+    @apply mt-2 text-start text-base;
   }
 
   h1,
@@ -110,19 +121,15 @@
   }
 
   h1 {
-    @apply text-6xl mb-4 wrap-break-word font-semibold leading-[1.1];
-
-    @media screen and (max-width: 640px) {
-      @apply text-5xl;
-    }
+    @apply text-4xl sm:text-5xl mb-4 font-semibold leading-[1.2];
   }
 
   h2 {
-    @apply mt-3 mb-3 text-2xl font-light wrap-break-word leading-none;
+    @apply mb-1 text-xl font-light;
   }
 
   h3 {
-    @apply mt-3 mb-3 text-lg tracking-widest uppercase leading-5;
+    @apply mb-2 text-lg tracking-widest uppercase leading-5;
   }
 
   .short-note {
@@ -141,6 +148,10 @@
 
 	.glass-round {
 		@apply bg-white/10 backdrop-blur-sm border border-white/10 rounded-full before:content-[""] before:absolute before:inset-0 before:rounded-full before:border before:border-white/20;
+	}
+
+	.btn {
+		@apply z-4 rounded-md px-5 py-2 text-white transition-colors duration-200 hover:bg-navy/50 hover:text-white/80 bg-black w-35 h-10 border border-white/30;
 	}
 }
 
@@ -233,7 +244,7 @@
 		}
 
 		.hero-container {
-			@apply flex flex-col items-center z-2 p-4 sm:p-6 mt-13;
+			@apply flex flex-col items-center z-2 p-4 sm:p-6 ml-2 sm:ml-4 mt-13;
 		}
 
 		.hero-sub-container {
@@ -241,15 +252,15 @@
 		}
 
 		.hero-top {
-			@apply flex flex-col justify-center  items-center sm:items-end gap-6;
+			@apply flex flex-col justify-center  items-center sm:items-end gap-4 mt-2 lg:mt-0;
 		}
 
 		.hero-img-container {
-			@apply translate-y-[-50%] sm:translate-y-0;
+			@apply translate-y-[-50%] sm:translate-y-0 mt-2 sm:mt-0;
 		}
 
 		.hero-img {
-			@apply w-28 h-28 rounded-xl opacity-90 shadow-[0_0_16px_rgba(2,7,60,0.8)];
+			@apply w-32 h-32 lg:w-48 lg:h-48 rounded-xl opacity-90 shadow-[0_0_16px_rgba(2,7,60,0.8)];
 		}
 
 		.hero-content {
@@ -268,6 +279,10 @@
 			@apply mt-0;
 		}
 
+		.hero-paragraph {
+			@apply sm:w-[60%] mx-auto mt-6;
+		}
+
 		.hero-buttons {
 			@apply flex flex-wrap items-center justify-center md:justify-end gap-4 w-full mt-16;
 		}
@@ -283,21 +298,17 @@
 		.btn-text {
 			@apply relative z-4 rounded-md px-5 py-2 text-white hover:bg-navy/50 hover:text-white/80 duration-200 transition-colors border bg-[radial-gradient(at_center,var(--color-pink)_2%,var(--color-red))] border-gold/30 hover:border-white/30 shadow-[0_0_16px_rgba(144,35,91,0.8)];
 		}
-
-		.btn {
-			@apply z-4 rounded-md px-5 py-2 text-white transition-colors duration-200 hover:bg-navy/50 hover:text-white/80 bg-black w-35 h-10 border border-white/30;
-		}
 	}
 
 	#about {
 		@apply min-h-dvh z-0 overflow-x-hidden;
 
 		.about-container {
-			@apply flex flex-col gap-4 z-2 p-4 mt-14;
+			@apply flex flex-col gap-4 z-3 p-4 mt-14;
 		}
 
 		.about-sub-container {
-			@apply grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-4 max-w-4xl mx-auto;
+			@apply grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-4 max-w-5xl mx-auto;
 		}
 
 		.about-job {
@@ -330,6 +341,98 @@
 
 		.about-skill-icon {
 			@apply h-5;
+		}
+	}
+
+	#projects {
+		@apply min-h-dvh z-0 overflow-x-hidden;
+
+		.projects-container {
+			@apply flex flex-col gap-4 z-2 p-4 mt-14;
+		}
+	}
+
+	#contact {
+		@apply min-h-dvh z-0 overflow-x-hidden;
+
+		h1 {
+			@apply text-shadow-black/10 text-shadow-lg mt-2 mb-0;
+		}
+
+		h2 {
+			@apply mt-0;
+		}
+
+		.contact-container-result {
+			@apply flex flex-col sm:flex-row sm:justify-between sm:items-center;
+		}
+
+		.contact-result {
+			@apply text-light-gold rounded-md border border-light-gold max-w-fit px-4 py-2
+		}
+
+		.contact-container-top {
+			@apply flex flex-col gap-4 z-2 mt-14 px-4 py-2;
+		}
+
+		.contact-availability {
+			@apply text-sm flex justify-center items-center gap-4 max-w-65 md:max-w-fit bg-transparent border border-gold/70 rounded-full my-9 px-4 py-2 inset-shadow-[0_0_30px_rgba(86,21,55,0.8)];
+
+			p {
+				@apply mt-0;
+			}
+		}
+
+		.contact-availability-icon {
+			@apply text-light-gold h-5 w-5 shrink-0;
+		}
+
+		.contact-availability:is(:hover, :focus-visible) > svg {
+			@apply animate-[ringTheBell_0.5s_ease-in-out_alternate_infinite] origin-top;
+		}
+
+		.contact-container-bottom {
+			@apply flex flex-col justify-center md:flex-row md:items-stretch gap-4 z-2 py-2 px-4 mx-auto;
+
+			address {
+				@apply not-italic;
+			}
+		}
+
+		.contact-item {
+			@apply flex flex-col max-w-sm w-full p-2 ml-2;
+
+			p {
+				@apply flex items-center gap-4 mt-0;
+			}
+		}
+
+		.contact-item-icon {
+			@apply text-light-gold h-5 w-5;
+		}
+
+		.contact-container-content {
+			@apply flex flex-col w-full md:flex-1 md:basis-0 md:min-w-0;
+		}
+
+		.contact-container-content:first-child {
+			@apply border-b border-light-gold pb-4 md:border-b-0 md:pb-0;
+		}
+
+		.contact-container-content + .contact-container-content {
+			@apply md:border-l md:border-light-gold md:pl-24;
+		}
+
+		.contact-form {
+			@apply flex flex-col;
+		}
+
+		.contact-form-group {
+			@apply flex flex-col gap-1;
+		}
+
+ 		.contact-form-button {
+			@apply flex items-center justify-center self-center gap-4 p-2 min-w-fit mt-4;
 		}
 	}
 }
