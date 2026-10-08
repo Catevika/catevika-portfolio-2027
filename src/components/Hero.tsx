@@ -19,9 +19,11 @@ function Hero() {
               </a>
             </div>
 
-            <div className="-mt-16 hero-content lg:mt-0">
+            <div className="-mt-16 hero-content lg:-mt-32">
               <div className="hero-headings animate-reveal-down">
-                <h2>Dominique Bello</h2>
+                <h2>
+                  Dominique <span className="uppercase">Bello</span>
+                </h2>
                 <h1 className="text-gradient-gold text-shadow-black/10 text-shadow-lg">
                   Full-stack Developer
                 </h1>
@@ -29,7 +31,7 @@ function Hero() {
                 <p className="short-note">
                   MongoDB, Express.js, React, Node.js
                 </p>
-                <p>
+                <p className="hero-paragraph">
                   I build modern web applications with a strong focus on
                   maintainability, accessibility, testing and user experience.
                 </p>
@@ -45,7 +47,7 @@ function Hero() {
             </a>
             <a href="#contact" className="btn-link">
               <button type="button" className="btn">
-                Contact Me
+                Get in Touch
               </button>
             </a>
           </div>
