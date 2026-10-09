@@ -74,6 +74,47 @@ function Contact() {
               <span>Response time typically within 24 hours</span>
             </p>
           </div>
+          <div className="contact-item contact-socials">
+            <a
+              href="https://github.com/catevika"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p>
+                <img
+                  src="/src/assets/icons/github.svg"
+                  alt="Github"
+                  className="contact-item-img"
+                />
+              </p>
+            </a>
+            <a
+              href="https://x.com/dominique_bello"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p>
+                <img
+                  src="/src/assets/icons/x.svg"
+                  alt="x"
+                  className="contact-item-img"
+                />
+              </p>
+            </a>
+            <a
+              href="https://bsky.app/profile/catevika.bsky.social"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p>
+                <img
+                  src="/src/assets/icons/bluesky.svg"
+                  alt="Bluesky"
+                  className="contact-item-img"
+                />
+              </p>
+            </a>
+          </div>
         </address>
 
         <div className="contact-container-content">

@@ -161,7 +161,7 @@
 	}
 
 	#header {
-    @apply fixed top-0 left-0 flex flex-col justify-center items-center bg-radial-[circle_at_left_top,navy_-10%,black_100%] backdrop-blur-sm border-2 border-white/10 w-full h-dvh z-10 sm:top-4 sm:flex-row sm:justify-between sm:max-w-360 sm:w-[90%] sm:h-auto sm:rounded-full sm:inset-x-0 sm:mx-auto sm:transform-none;
+    @apply fixed top-0 left-0 bg-radial-[circle_at_left_top,navy_-10%,black_100%] sm:bg-linear-to-b sm:from-navy sm:from-50% sm:to-transparent sm:to-100% flex flex-col justify-center items-center w-full z-10 sm:flex-row sm:justify-between sm:max-w-360 h-dvh sm:h-auto sm:inset-x-0 sm:mx-auto sm:transform-none;
 	}
 
 	#navbar {
@@ -217,7 +217,7 @@
 	}
 
 	#logo {
-		@apply order-2 sm:order-1 z-11;
+		@apply p-4 order-2 sm:order-1 z-11;
 
 		.logo-img { 
 		@apply w-12 h-12 rounded-full;
@@ -225,14 +225,58 @@
 	}
 
 	#footer {
-		@apply flex flex-col sm:flex-row justify-center sm:justify-between items-center ml-4 mb-2 sm:mb-0 z-4;
+		@apply grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2 z-4 pt-12 text-white/40;
+
+		.footer-logo-container {
+			@apply flex flex-col items-center gap-2 order-2 md:order-1;
+		}
+
+		.footer-logo {
+			@apply w-24 h-24 rounded-full;
+		}
 
 		.copyright {
-			@apply text-sm mr-0 sm:mr-auto whitespace-nowrap;
+			@apply text-sm whitespace-nowrap;
+
+			p {
+				@apply mt-0;
+			}
+
+			span {
+				@apply text-light-gold/70;
+			}
+		}
+
+		.footer-bottom {
+			@apply grid grid-cols-2 order-1 sm:order-2 justify-center sm:justify-end gap-2 sm:gap-4;
+		}
+
+		.footer-menu {
+			@apply flex flex-col sm:gap-2 ml-4 sm:ml-0;
+
+			p {
+				@apply text-light-gold/70 mt-0;
+			}
+
+			a {
+				@apply hover:text-white transition-colors duration-200;
+			}
 		}
 
 		.socials {
-			@apply flex items-center gap-2;
+			@apply flex flex-col gap-2;
+
+			p {
+				@apply text-light-gold/70 mt-0;
+			}
+
+			a {
+				@apply hover:text-white transition-colors duration-200;
+			}
+		}
+
+		.footer-socials-img {
+			@apply w-6 h-6 bg-light-gold rounded-sm;
 		}
 	}
 
@@ -353,7 +397,7 @@
 	}
 
 	#contact {
-		@apply min-h-dvh z-0 overflow-x-hidden;
+		@apply min-h-dvh z-0 overflow-x-hidden mb-6 sm:mb-0;
 
 		h1 {
 			@apply text-shadow-black/10 text-shadow-lg mt-2 mb-0;
@@ -409,6 +453,14 @@
 
 		.contact-item-icon {
 			@apply text-light-gold h-5 w-5;
+		}
+
+		.contact-socials {
+			@apply flex flex-row self-center items-center gap-6 mt-6;
+		}
+
+		.contact-item-img {
+			@apply w-6 h-6 bg-light-gold rounded-sm;
 		}
 
 		.contact-container-content {
