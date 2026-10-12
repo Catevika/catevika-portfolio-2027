@@ -54,7 +54,7 @@ function Navbar({
   }, []);
 
   return (
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Primary navigation">
       <ul className="nav-links">
         {links.map((link: Link) => (
           <li className="line" key={link.text}>
@@ -62,6 +62,7 @@ function Navbar({
               href={link.path}
               onClick={() => setIsOpen(false)}
               className={activeId === link.path ? "active" : ""}
+              aria-current={activeId === link.path ? "location" : undefined}
             >
               {link.text}
             </a>

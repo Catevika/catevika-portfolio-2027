@@ -1,8 +1,8 @@
 function Projects() {
   return (
-    <section id="projects">
+    <section id="projects" aria-labelledby="projects-heading">
       <div className="projects-container">
-        <h2>Featured Projects</h2>
+        <h2 id="projects-heading">Featured Projects</h2>
       </div>
     </section>
   );

@@ -12,7 +12,9 @@ function Header({
     <header
       id="header"
       className={`transition-transform duration-300 ${
-        isOpen === true ? "translate-x-0" : "-translate-x-full sm:translate-x-0"
+        isOpen === true ?
+          "visible translate-x-0"
+        :	"invisible -translate-x-full sm:visible sm:translate-x-0"
       }`}
     >
       <Logo />

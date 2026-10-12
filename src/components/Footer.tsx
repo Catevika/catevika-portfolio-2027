@@ -4,7 +4,7 @@ function Footer() {
       <div className="footer-logo-container">
         <img
           src="/src/assets/images/Catevika.png"
-          alt="Logo"
+          alt="Catevika Web Dev"
           className="footer-logo"
         />
 
@@ -17,20 +17,21 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <div className="footer-menu">
+        <nav className="footer-menu" aria-label="Footer navigation">
           <p>Menu</p>
           <a href="#hero">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-        </div>
+        </nav>
 
-        <div className="socials">
+        <nav className="socials" aria-label="Social media">
           <p>Follow me on</p>
           <a
             href="https://github.com/catevika"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub (opens in a new tab)"
           >
             Github
           </a>
@@ -38,6 +39,7 @@ function Footer() {
             href="https://x.com/dominique_bello"
             target="_blank"
             rel="noreferrer"
+            aria-label="X (opens in a new tab)"
           >
             X
           </a>
@@ -45,10 +47,11 @@ function Footer() {
             href="https://bsky.app/profile/catevika.bsky.social"
             target="_blank"
             rel="noreferrer"
+            aria-label="Bluesky (opens in a new tab)"
           >
             Bluesky
           </a>
-        </div>
+        </nav>
       </div>
     </footer>
   );

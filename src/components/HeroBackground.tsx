@@ -133,7 +133,13 @@ function HeroBackground() {
     return () => cancelAnimationFrame(requestId);
   }, []);
 
-  return <canvas ref={canvasRef} className="hero-background" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="hero-background"
+      aria-hidden="true"
+    />
+  );
 }
 
 export default HeroBackground;

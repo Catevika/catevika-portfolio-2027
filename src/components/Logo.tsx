@@ -3,7 +3,7 @@ const Logo = () => {
     <div id="logo">
       <img
         src="/src/assets/images/Catevika.png"
-        alt="Logo"
+        alt="Catevika Web Dev"
         className="logo-img"
       />
     </div>

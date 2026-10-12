@@ -10,10 +10,20 @@ function AppLayout() {
 
 	return (
 		<div>
-			<button id="menu-button" onClick={() => setIsOpen(!isOpen)}>
+			<a className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-navy focus:p-3" href="#main-content">
+				Skip to main content
+			</a>
+			<button
+				id="menu-button"
+				type="button"
+				aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+				aria-expanded={isOpen}
+				aria-controls="header"
+				onClick={() => setIsOpen(!isOpen)}
+			>
 				{!isOpen ?
-					<AiOutlineMenuFold size={24} />
-				:	<AiOutlineMenuUnfold size={24} />}
+					<AiOutlineMenuFold size={24} aria-hidden="true" />
+				:	<AiOutlineMenuUnfold size={24} aria-hidden="true" />}
 			</button>
 			<Header isOpen={isOpen} setIsOpen={setIsOpen} />
 			<Outlet />

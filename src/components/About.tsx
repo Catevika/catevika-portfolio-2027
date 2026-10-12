@@ -4,9 +4,12 @@ import type { Item, Job, Skill } from "../types";
 
 function About() {
   return (
-    <section id="about">
+    <section id="about" aria-labelledby="about-heading">
       <div className="about-container">
-        <h1 className="text-gradient-gold text-shadow-black/10 text-shadow-lg mb-0">
+        <h1
+          id="about-heading"
+          className="text-gradient-gold text-shadow-black/10 text-shadow-lg mb-0"
+        >
           Crafting Digital Experiences
         </h1>
         <h2 className="mt-0">
@@ -29,7 +32,7 @@ function About() {
                   {item.icon ? (
                     <img
                       src={item.icon}
-                      alt={item.name}
+                      alt=""
                       className="about-skill-icon"
                     />
                   ) : null}

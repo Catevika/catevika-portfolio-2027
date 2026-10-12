@@ -2,7 +2,7 @@ import HeroBackground from "./HeroBackground";
 
 function Hero() {
   return (
-    <section id="hero">
+    <section id="hero" aria-labelledby="hero-heading">
       <HeroBackground />
 
       <div className="glass-card hero-container">
@@ -21,10 +21,10 @@ function Hero() {
 
             <div className="-mt-16 hero-content lg:-mt-32">
               <div className="hero-headings animate-reveal-down">
-                <h2>
+                <p className="hero-name">
                   Dominique <span className="uppercase">Bello</span>
-                </h2>
-                <h1 className="text-gradient-gold text-shadow-black/10 text-shadow-lg">
+                </p>
+                <h1 id="hero-heading" className="text-gradient-gold text-shadow-black/10 text-shadow-lg">
                   Full-stack Developer
                 </h1>
                 <h3 className="hero-stack">MERN Stack </h3>
@@ -40,15 +40,11 @@ function Hero() {
           </div>
 
           <div className="hero-buttons">
-            <a href="#projects" className="btn-link">
-              <button type="button" className="btn-animated-cta">
-                <div className="btn-text">View Projects</div>
-              </button>
+            <a href="#projects" className="btn-animated-cta">
+              <span className="btn-text">View Projects</span>
             </a>
-            <a href="#contact" className="btn-link">
-              <button type="button" className="btn">
-                Get in Touch
-              </button>
+            <a href="#contact" className="btn">
+              Get in Touch
             </a>
           </div>
         </div>

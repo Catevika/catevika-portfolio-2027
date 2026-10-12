@@ -88,12 +88,12 @@
 	}
 
 	html {
-		@apply bg-black;
+		@apply bg-navy;
 		scroll-behavior: smooth;
 	}
 
   :root {
-    @apply relative bg-radial-[circle_at_left_top,navy_-10%,black_100%] bg-no-repeat font-sans text-base text-white max-w-360 mx-auto w-full min-h-dvh overflow-x-hidden;
+    @apply relative bg-navy font-sans text-base text-white max-w-360 mx-auto w-full min-h-dvh overflow-x-hidden;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -102,7 +102,7 @@
   }
 
   main {
-    @apply mx-2 mb-2 z-1;
+    @apply z-1;
   }
 
   a {
@@ -156,6 +156,9 @@
 }
 
 @layer components {
+	main > section {
+		@apply px-2 pb-2 bg-radial-[circle_at_left_top,navy_-10%,black_100%] bg-no-repeat;
+	}
 	#menu-button {
 		@apply fixed top-6 left-6 sm:hidden z-11;
 	}
@@ -225,7 +228,7 @@
 	}
 
 	#footer {
-		@apply grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2 z-4 pt-12 text-white/40;
+		@apply grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2 z-4 pt-12 text-white/40 bg-navy;
 
 		.footer-logo-container {
 			@apply flex flex-col items-center gap-2 order-2 md:order-1;
@@ -281,10 +284,10 @@
 	}
 
 	#hero {
-		@apply flex flex-col items-center justify-center min-h-dvh z-0 overflow-x-hidden;
+		@apply relative isolate flex flex-col items-center justify-center min-h-dvh z-0 overflow-x-hidden;
 
 		.hero-background {
-			@apply absolute top-0 left-0 -z-1 pointer-events-none max-w-360 w-dvw max-h-dvh;
+			@apply absolute top-0 left-0 z-0 pointer-events-none max-w-360 w-dvw max-h-dvh;
 		}
 
 		.hero-container {
@@ -315,6 +318,10 @@
 			@apply flex flex-col items-start justify-center;
 		}
 
+		.hero-name {
+			@apply font-heading text-xl font-light mt-0 mb-1;
+		}
+
 		.hero-stack {
 			@apply mb-0;
 		}
@@ -336,11 +343,11 @@
 		}
 
 		.btn-animated-cta {
-			@apply relative rounded-md p-0.5 before:content-[''] before:absolute before:inset-0 before:rounded-md before:bg-[conic-gradient(from_var(--angle),color-mix(in_oklch,var(--color-white)_10%,transparent),var(--color-gold),transparent_15%)] before:animate-[rotate_5s_linear_infinite] hover:before:animate-none motion-reduce:animate-none hover:before:bg-none;
+			@apply relative inline-block rounded-md p-0.5 before:content-[''] before:absolute before:inset-0 before:rounded-md before:bg-[conic-gradient(from_var(--angle),color-mix(in_oklch,var(--color-white)_10%,transparent),var(--color-gold),transparent_15%)] before:animate-[rotate_5s_linear_infinite] hover:before:animate-none motion-reduce:animate-none hover:before:bg-none;
 		}
 
 		.btn-text {
-			@apply relative z-4 rounded-md px-5 py-2 text-white hover:bg-navy/50 hover:text-white/80 duration-200 transition-colors border bg-[radial-gradient(at_center,var(--color-pink)_2%,var(--color-red))] border-gold/30 hover:border-white/30 shadow-[0_0_16px_rgba(144,35,91,0.8)];
+			@apply relative z-4 block rounded-md px-5 py-2 text-white hover:bg-navy/50 hover:text-white/80 duration-200 transition-colors border bg-[radial-gradient(at_center,var(--color-pink)_2%,var(--color-red))] border-gold/30 hover:border-white/30 shadow-[0_0_16px_rgba(144,35,91,0.8)];
 		}
 	}
 
@@ -397,7 +404,7 @@
 	}
 
 	#contact {
-		@apply min-h-dvh z-0 overflow-x-hidden mb-6 sm:mb-0;
+		@apply min-h-dvh z-0 overflow-x-hidden pb-6 sm:pb-0;
 
 		h1 {
 			@apply text-shadow-black/10 text-shadow-lg mt-2 mb-0;
