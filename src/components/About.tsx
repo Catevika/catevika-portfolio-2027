@@ -1,6 +1,7 @@
 import { professionalJourney } from "../data/professional-journey";
 import { skills } from "../data/skills";
 import type { Item, Job, Skill } from "../types";
+import SectionWave from "./SectionWave";
 
 function About() {
   return (
@@ -43,6 +44,7 @@ function About() {
           ))}
         </div>
       </div>
+      <SectionWave />
     </section>
   );
 }

@@ -6,6 +6,7 @@ import {
   LuMapPin,
   LuSend,
 } from "react-icons/lu";
+import SectionWave from "./SectionWave";
 
 const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string;
 
@@ -204,6 +205,7 @@ function Contact() {
           </form>
         </div>
       </div>
+      <SectionWave />
     </section>
   );
 }

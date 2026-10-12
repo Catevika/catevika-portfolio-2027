@@ -1,4 +1,5 @@
 import HeroBackground from "./HeroBackground";
+import SectionWave from "./SectionWave";
 
 function Hero() {
   return (
@@ -49,6 +50,7 @@ function Hero() {
           </div>
         </div>
       </div>
+      <SectionWave />
     </section>
   );
 }

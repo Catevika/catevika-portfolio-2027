@@ -139,7 +139,7 @@
 
 @layer utilities {
 	.glass-card {
-		@apply bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl before:content-[""] before:absolute before:inset-0 before:rounded-xl before:border before:border-white/20;
+		@apply bg-navy/10 backdrop-blur-sm border border-white/10 rounded-xl before:content-[""] before:absolute before:inset-0 before:rounded-xl before:border before:border-white/20;
 	}
 
 	.glass-menu {
@@ -157,8 +157,23 @@
 
 @layer components {
 	main > section {
-		@apply px-2 pb-2 bg-radial-[circle_at_left_top,navy_-10%,black_100%] bg-no-repeat;
+		@apply relative px-2 pb-2 bg-radial-[circle_at_left_top,navy_-10%,black_100%] bg-no-repeat;
+		background-image:
+			linear-gradient(
+				to bottom,
+				var(--color-navy) 0%,
+				transparent 18%,
+				transparent 78%,
+				var(--color-navy) 100%
+			),
+			radial-gradient(circle at left top, var(--color-navy) -10%, var(--color-black) 100%);
 	}
+
+	.section-wave {
+		-webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+		mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+	}
+
 	#menu-button {
 		@apply fixed top-6 left-6 sm:hidden z-11;
 	}
@@ -404,7 +419,7 @@
 	}
 
 	#contact {
-		@apply min-h-dvh z-0 overflow-x-hidden pb-6 sm:pb-0;
+		@apply min-h-dvh z-0 overflow-x-hidden pb-16;
 
 		h1 {
 			@apply text-shadow-black/10 text-shadow-lg mt-2 mb-0;
