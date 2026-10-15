@@ -30,3 +30,12 @@ export type Skill = {
   title: string;
   items: Item[];
 };
+
+export type Project = {
+  picture: string;
+  title: string;
+  description: string;
+  tags: string[];
+  live: string;
+  code: string;
+};

@@ -299,7 +299,7 @@
 	}
 
 	#hero {
-		@apply relative isolate flex flex-col items-center justify-center min-h-dvh z-0 overflow-x-hidden;
+		@apply relative isolate flex flex-col items-center justify-center min-h-dvh z-0 overflow-x-hidden pb-20;
 
 		.hero-background {
 			@apply absolute top-0 left-0 z-0 pointer-events-none max-w-360 w-dvw max-h-dvh;
@@ -367,7 +367,7 @@
 	}
 
 	#about {
-		@apply min-h-dvh z-0 overflow-x-hidden;
+		@apply min-h-dvh z-0 overflow-x-hidden pb-20;
 
 		.about-container {
 			@apply flex flex-col gap-4 z-3 p-4 mt-14;
@@ -411,10 +411,78 @@
 	}
 
 	#projects {
-		@apply min-h-dvh z-0 overflow-x-hidden;
+		@apply min-h-dvh z-0 overflow-x-hidden pb-20;
 
 		.projects-container {
 			@apply flex flex-col gap-4 z-2 p-4 mt-14;
+		}
+
+		.projects-grid {
+			@apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl w-full mx-auto;
+		}
+
+		.project-card {
+			@apply relative flex cursor-pointer flex-col overflow-hidden;
+		}
+
+		.project-image-button {
+			@apply relative z-1 block w-full cursor-zoom-in border-0 bg-transparent p-0;
+		}
+
+		.project-image {
+			@apply block w-full aspect-video object-cover;
+		}
+
+		.project-card-content {
+			@apply relative z-1 flex flex-1 flex-col gap-2 p-3;
+		}
+
+		.project-title {
+			@apply mt-0 mb-0 min-h-10;
+		}
+
+		.project-description {
+			@apply mt-0 min-h-20 line-clamp-4 text-sm text-white/80;
+		}
+
+		.project-tags {
+			@apply flex max-h-14 flex-wrap gap-1 overflow-hidden mt-0 p-0 list-none;
+		}
+
+		.project-tag {
+			@apply mt-0 rounded-full border border-gold/40 bg-black/20 px-2 py-0.5 text-xs text-light-gold;
+		}
+
+		.project-actions {
+			@apply flex flex-wrap gap-2 mt-auto pt-2;
+		}
+
+		.project-link {
+			@apply flex flex-1 items-center justify-center text-center text-sm;
+		}
+
+		.project-dialog {
+			@apply m-auto h-[80dvh] w-[80vw] max-w-7xl overflow-auto rounded-xl border border-white/20 bg-navy p-0 text-white backdrop:bg-black/80;
+		}
+
+		.project-dialog-card {
+			@apply relative min-h-full;
+		}
+
+		.project-dialog-close {
+			@apply absolute right-3 top-3 z-2 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/80 text-white;
+		}
+
+		.project-dialog-close svg {
+			@apply block h-5 w-5 shrink-0;
+		}
+
+		.project-dialog-image {
+			@apply block max-h-[45dvh] w-full object-contain;
+		}
+
+		.project-dialog-content {
+			@apply flex flex-col gap-3 p-4 sm:p-6;
 		}
 	}
 
