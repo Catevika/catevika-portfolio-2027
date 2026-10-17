@@ -1,3 +1,5 @@
+import type { Dispatch, SetStateAction } from "react";
+
 export type Link = { text: string; path: string };
 
 export type Links = { text: string; path: string }[];
@@ -33,9 +35,35 @@ export type Skill = {
 
 export type Project = {
   picture: string;
+  imageFit?: "contain" | "cover";
   title: string;
   description: string;
   tags: string[];
   live: string;
   code: string;
+};
+
+export type SetIsOpen = Dispatch<SetStateAction<boolean>>;
+
+export type Header = {
+  isOpen: boolean;
+  setIsOpen: SetIsOpen;
+};
+
+export type Navbar = {
+  setIsOpen: SetIsOpen;
+};
+
+export type ProjectCard = {
+  project: Project;
+  onSelect: (project: Project) => void;
+};
+
+export type ProjectDialog = {
+  project: Project | null;
+  onClose: () => void;
+};
+
+export type ContactForm = {
+  onStatusChange: (status: string) => void;
 };

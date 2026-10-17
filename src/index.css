@@ -389,12 +389,38 @@
 			@apply text-sm border-l border-l-light-gold pl-4;
 		}
 
+		.about-skills-carousel {
+			@apply flex flex-col gap-4;
+		}
+
 		.about-skills-container {
-			@apply flex gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain xl:overflow-x-hidden;
+			@apply flex snap-x snap-mandatory gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain;
+			scrollbar-width: none;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.about-skills-container::-webkit-scrollbar {
+			display: none;
 		}
 
 		.about-skill {
-			@apply m-0 min-w-0 shrink-0 basis-[85%] p-4 sm:basis-[70%] md:basis-[48%] lg:basis-[32%] xl:basis-0 xl:shrink xl:flex-1;
+			@apply m-0 min-w-0 shrink-0 snap-start basis-[85%] p-4 sm:basis-[70%] md:basis-[48%] lg:basis-[32%] xl:basis-0 xl:shrink xl:flex-1;
+		}
+
+		.about-skills-dots {
+			@apply flex items-center justify-center gap-2 xl:hidden;
+		}
+
+		.about-skill-dot {
+			@apply h-2 w-2 rounded-full bg-white/40 transition-all duration-200;
+		}
+
+		.about-skill-dot[aria-current="true"] {
+			@apply w-6 bg-light-gold;
+		}
+
+		.about-skill-dot:focus-visible {
+			@apply outline-2 outline-offset-4 outline-light-gold;
 		}
 
 		.about-skill-title {
@@ -431,6 +457,10 @@
 
 		.project-image {
 			@apply block w-full aspect-video object-cover;
+		}
+
+		.project-image-contain {
+			@apply bg-black/30 object-contain object-center;
 		}
 
 		.project-card-content {

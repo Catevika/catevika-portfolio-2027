@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
 import { links } from "../data/links";
-import type { Link, NavId } from "../types";
+import type { Link, Navbar, NavId } from "../types";
 
 function isNavId(value: string): value is NavId {
   return links.some((link) => link.path === value);
 }
 
-function Navbar({
-  setIsOpen,
-}: {
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+export default function Navbar({ setIsOpen }: Navbar) {
   const [activeId, setActiveId] = useState<NavId>(() =>
     isNavId(window.location.hash) ? window.location.hash : "#hero",
   );
@@ -31,9 +27,7 @@ function Navbar({
               first.boundingClientRect.top - second.boundingClientRect.top,
           )[0];
 
-        const visibleId = visibleSection
-          ? `#${visibleSection.target.id}`
-          : "";
+        const visibleId = visibleSection ? `#${visibleSection.target.id}` : "";
         if (isNavId(visibleId)) {
           setActiveId(visibleId);
         }
@@ -72,5 +66,3 @@ function Navbar({
     </nav>
   );
 }
-
-export default Navbar;

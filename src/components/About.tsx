@@ -1,7 +1,7 @@
 import { professionalJourney } from "../data/professional-journey";
-import { skills } from "../data/skills";
-import type { Item, Job, Skill } from "../types";
+import type { Job } from "../types";
 import SectionWave from "./SectionWave";
+import SkillsCarousel from "./SkillsCarousel";
 
 function About() {
   return (
@@ -24,25 +24,7 @@ function About() {
             </article>
           ))}
         </div>
-        <div className="about-skills-container">
-          {skills.map((skill: Skill) => (
-            <article key={skill.title} className="glass-card about-skill">
-              <h3 className="about-skill-title">{skill.title}</h3>
-              {skill.items.map((item: Item) => (
-                <p key={item.name} className="about-skill-item">
-                  {item.icon ? (
-                    <img
-                      src={item.icon}
-                      alt=""
-                      className="about-skill-icon"
-                    />
-                  ) : null}
-                  <span>{item.name}</span>
-                </p>
-              ))}
-            </article>
-          ))}
-        </div>
+        <SkillsCarousel />
       </div>
       <SectionWave />
     </section>

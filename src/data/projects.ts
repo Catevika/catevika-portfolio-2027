@@ -1,3 +1,5 @@
+import type { Project } from "../types";
+
 export const projects = [
   {
     picture: "/src/assets/screenshots/2026-blog_desktop_mobile.png",
@@ -137,9 +139,10 @@ export const projects = [
   },
   {
     picture: "/src/assets/screenshots/catevika-expo-MovieSearch.png",
+    imageFit: "contain",
     title: "TMDB MovieSearch",
     description:
-      "React native and Expo app for Android devices. Create an account, get access to the Latest Movies description, and a Trending Movies list based on your search. Save your favorites to come back later.",
+      "React Native and Expo app for Android devices, also available as a web version. Create an account, browse movie details and trending movies, and save favorites to revisit later.",
     tags: [
       "react-native",
       "typescript",
@@ -156,4 +159,4 @@ export const projects = [
     live: "https://catevika-expo-movies.expo.app/",
     code: "https://github.com/Catevika/Expo-MovieSearch",
   },
-];
+] satisfies Project[];

@@ -1,20 +1,15 @@
 import Logo from "./Logo";
 import Navbar from "./Navbar";
+import type { Header } from "../types";
 
-function Header({
-  isOpen,
-  setIsOpen,
-}: {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+export default function Header({ isOpen, setIsOpen }: Header) {
   return (
     <header
       id="header"
       className={`transition-transform duration-300 ${
-        isOpen === true ?
-          "visible translate-x-0"
-        :	"invisible -translate-x-full sm:visible sm:translate-x-0"
+        isOpen === true
+          ? "visible translate-x-0"
+          : "invisible -translate-x-full sm:visible sm:translate-x-0"
       }`}
     >
       <Logo />
@@ -23,5 +18,3 @@ function Header({
     </header>
   );
 }
-
-export default Header;
